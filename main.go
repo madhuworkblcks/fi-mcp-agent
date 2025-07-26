@@ -29,6 +29,10 @@ func logRequestMiddleware(next http.Handler) http.Handler {
             }
         }
 
+		if(r.Header.Get("Content-Type") == "application/json; charset=utf-8"){
+			r.Header.Set("Content-Type", "application/json")
+		}
+
         // Log body
         if r.Body != nil {
             bodyBytes, err := io.ReadAll(r.Body)
@@ -72,6 +76,7 @@ func main() {
 	)
 	// httpMux.Handle("/mcp/", streamableServer)
 	httpMux.Handle("/mcp/", logRequestMiddleware(streamableServer))
+	// httpMux.Handle("/mcp/", logRequestMiddleware(http.HandlerFunc(jsonHandler)))
 	httpMux.HandleFunc("/mockWebPage", webPageHandler)
 	httpMux.HandleFunc("/login", loginHandler)
 	port := pkg.GetPort()
