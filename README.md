@@ -1,4 +1,13 @@
-## This code is a replica from fi mcp fastmcp client and modified as needed for hackathon. Original repo - https://github.com/epiFi/fi-mcp-dev
+## This code is a replica from fi mcp fastmcp client and modified as needed for hackathon. Original repo - https://github.com/epiFi/
+
+As part of the custom implementation, our team modified and implemented two flavours of Agents.
+1. Fi MCP Agent - For handling organised data. This is for Urban Financial Toolkit of applicaiton
+2. DhanQ MCP Agent - For handling unorganised finacial data like unregistered loans, govt schemes etc.
+
+Please follow below instructions to build and run each agent
+
+## Fi MCP Agent Dev Server
+fi-mcp-dev
 # fi-mcp-dev
 
 A minimal, hackathon-ready version of the Fi MCP server. This project provides a lightweight mock server for use in hackathons, demos, and development, simulating the core features of the production Fi MCP server with dummy data and simplified authentication.
